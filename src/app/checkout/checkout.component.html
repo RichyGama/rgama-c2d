@@ -1,0 +1,194 @@
+<section class="c2d-checkout-titulo">
+    <div class="container bg-white">
+        <div class="row">
+            <div class="col">
+                <h1 class="text-primary text-center font-w-800">Confirma tu cita</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="c2d-checkout-forma">
+    <div class="container bg-pure-white">
+        <div class="row flex-md-row flex-column-reverse">
+            <div class="col-12 col-md-8">
+                <form (ngSubmit)="agendar()" [formGroup]="datosCompraForm">
+                    <div class="row mt-2">
+                        <div class="col-12 col-md-6 text-center text-md-start">
+                            <h4 class="font-weight-bold font-w-600">DATOS DE LA COMPRA</h4>
+                            <h5 class="small text-primary">Los datos con asterisco son obligatorios * </h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6 mb-2">
+                            <div class="form-floating">
+                                <input type="text" class="form-control c2d-checkout-input" id="nombre" placeholder=""
+                                    formControlName="nombre">
+                                <label for="nombre">Nombre *</label>
+                                <span class="form-text text-danger" *ngIf="revisarCampoValido('nombre')">Debe de ser minimo de 3 letras</span>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 mb-2">
+                            <div class="form-floating">
+                                <input type="text" class="form-control c2d-checkout-input" id="apellido" placeholder=""
+                                    formControlName="apellido">
+                                <label for="apellido">Apellido *</label>
+                                <span class="form-text text-danger" *ngIf="revisarCampoValido('apellido')">Debe de ser minimo de 3 letras</span>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 mb-2">
+                            <div class="form-floating">
+                                <input type="text" class="form-control c2d-checkout-input" id="telefono" placeholder=""
+                                    formControlName="telefono">
+                                <label for="telefono">telefono *</label>
+                                <span class="form-text text-danger" *ngIf="revisarCampoValido('telefono')">Debe de ser minimo de 10 digitos</span>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-floating">
+                                <input type="email" class="form-control c2d-checkout-input" id="correo" placeholder=""
+                                    formControlName="correo">
+                                <label for="correo">Correo Electronico *</label>
+                                <span class="form-text text-danger" *ngIf="revisarCampoValido('correo')">El email no es valido</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12 col-md-6 text-center text-md-start mt-2">
+                            <h4 class="font-weight-bold font-w-600">DATOS PARA EL PAGO</h4>
+                            <h5 class="small text-primary">Los datos con asterisco son obligatorios * </h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-5 mt-2">
+                            <h6>Pago Con Tarjeta de Debito o
+                                Credito</h6>
+                        </div>
+                        <div class="col-3 col-md-1 ms-4 ms-md-0">
+                            <img class="img-responsive" style="width:55px;" src="assets/img/visatarjetas_-min.png" />
+                        </div>
+
+                        <div class="col-3 col-md-1 ms-2">
+                            <img class="img-responsive" style="width:55px;"
+                                src="assets/img/mastercardtarjetas_-min.png" />
+                        </div>
+
+                        <div class="col-3 col-md-1 ms-2">
+                            <img class="img-responsive" style="width:55px;" src="assets/img/amextarjetas_-min.png" />
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-12">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control c2d-checkout-input" id="tcredito" placeholder=""
+                                    formControlName="tcredito">
+                                <label for="tcredito">NUMERO DE LA TARJETA DE CREDITO O DEBITO</label>
+                                <span class="form-text text-danger" *ngIf="revisarCampoValido('tcredito')">Numero de tarjeta invalido</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <div class="form-floating mb-3">
+                                <input type="date" class="form-control c2d-checkout-input" id="fechaexpiracion"
+                                    placeholder="" formControlName="fechaexpiracion">
+                                <label for="fechaexpiracion">FECHA DE EXPIRACION</label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control c2d-checkout-input" id="verificacion"
+                                    placeholder="" formControlName="verificacion">
+                                <label for="codexpiracion">CODIGO DE VERIFICACION</label>
+                                <span class="form-text text-danger" *ngIf="revisarCampoValido('verificacion')">Codigo de verificacion requerido</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mt-2">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" formControlName="terminos" id="terminos"
+                                    formControlName="terminos">
+                                <label class="form-check-label" for="terminos">Aceptar terminos y condiciones
+                                    *</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="m-2 col-12 text-center">
+                            <button type="submit" data-bs-toggle="modal" data-bs-target="#reciboModal"
+                                class="btn btn-success btn-lg text-white">Agendar
+                                cita</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-12 col-md-4 pt-2 pb-4">
+                <div class="card bg-primary">
+                    <div class="card-body text-white ">
+                        <img src="assets/img/checkout-min.png" class="rounded mx-auto d-block" style="width:200px;" />
+                        <div class="text-center">
+                            <h4 class="mt-4">Dr. Javier Medina Sanchez</h4>
+                            <h6 class="">Medicina General</h6>
+                            <h5 class="c2d-font-18 mt-3">Fecha y Hora de Cita:</h5>
+                            <h5 class="c2d-font-18">Sabado, 1 de Mayo 10:00 am</h5>
+                            <a href="#" class="h6 text-success">Cambiar Fecha</a>
+                        </div>
+                        <div class="row text-center mt-3">
+                            <div class="col-12">
+                                <p class="h4">TOTAL A PAGAR:</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex justify-content-center">
+                            <p class="h3 ps-2">$200</p>
+                            <p class="small p-2">incluye IVA</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <img class="img-fluid mx-auto d-block" style="width:100%; max-width:200px;"
+                                    src="assets/img/STRIPE-SELLO 1-min.png" />
+                            </div>
+                            <div class="col-12 text-center">
+                                <p class="small">* Recuerda que tu compra es 100% segura</p>
+                            </div>
+                        </div>
+                        <div class="pt-2">
+                            <p class="small">Una vez haces clic en el boton agendar cita,
+                                tienes hasta 24
+                                horas antes de la
+                                hora
+                                programada para reagendar o cancelarla. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="reciboModal" tabindex="-1" aria-labelledby="reciboModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content bg-pure-white">
+            <div class="modal-header">
+                <h3 class="modal-title text-primary text-left font-w-600" id="reciboModalLabel">Cita agendada con exito
+                </h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <h3 class="text-primary font-w-600">Datos de la cita:</h3>
+                <p class="h4 font-w-600">Dr. Javier Medina Sanchez</p>
+                <p class="h4 ">Medicina General</p>
+                <p class="h4">Sabado, 2 de Mayo 10:00 am</p>
+
+                <p>Te hemos enviado a tu correo la
+                    confirmacion de tu cita y
+                    la liga de acceso a la videoconsulta. </p>
+
+            </div>
+            <div class="modal-footer">
+                <p class="text-center">Si no recibes el correo despues de 5 minutos de haber
+                    realizado la compra comunicate al: 55 4444 4444</p>
+            </div>
+        </div>
+    </div>
+</div>

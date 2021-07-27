@@ -1,13 +1,140 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <title>C2d</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="utf-8">
+    <title>C2d</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon.ico">
+
+    <title>Click to Doc</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="assets/css/style.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .font-w-800 {
+            font-weight: 800;
+        }
+
+        .font-w-600 {
+            font-weight: 600;
+        }
+
+        .font-w-400 {
+            font-weight: 400;
+        }
+
+        .bg-pure-white {
+            background-color: white;
+        }
+
+        .c2d-agenda-card {
+            border-radius: 12px;
+            border: 1px solid #dfdfdf;
+            min-width: 220px;
+            max-width: 320px;
+        }
+
+        .c2d-checkout-input {
+            border: 0px;
+            border-bottom: 2px solid #888888;
+        }
+
+        .c2d-rounded-btn {
+            border-radius: 10px;
+        }
+
+        .c2d-font-18 {
+            font-size: 18px;
+        }
+    </style>
 </head>
+
+
 <body>
-  <app-root></app-root>
+    <header class="d-flex flex-wrap py-3 bg-primary">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none">
+            <img class="img-fluid ms-5" style="max-width: 150px;" src="assets/img/CTD BCO-min.png" />
+        </a>
+
+        <ul class="nav nav-pills">
+            <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">¿Quiénes somos?</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-white">Preguntas frecuentes</a></li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <img class="img-fluid me-1" style="max-width: 35px; vertical-align: -webkit-baseline-middle;"
+                        src="assets/img/PEOPLEverde-min.png" />Inicia sesión / Regístrate
+                </a>
+            </li>
+        </ul>
+    </header>
+
+    <main>
+        <app-root></app-root>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- C2DN JS exclisvo de la pagina AQUI -->
+
+        <!-- C2DN Su Codigo termina aqui AQUI -->
+    </main>
+    <footer class="bg-primary text-center text-lg-start text-light">
+        <div class="text-center pb-3 pt-3">
+            <a class="text-dark" href="https://mdbootstrap.com/">
+                <img class="img-fluid" style="min-width: 223px;" src="assets/img/footer.png" />
+            </a>
+        </div>
+        <div class="container pt-3 pb-5">
+            <div class="row justify-content-sm-center">
+                <div class="col">
+                    <a href="#" class="text-white text-center">Términos y Condiciones</a>
+                </div>
+                <div class="col">
+                    <a href="#" class="text-white text-center">Formato ARCO</a>
+                </div>
+                <div class="col">
+                    <a href="#" class="text-white text-center">Aviso de Privacidad</a>
+                </div>
+                <div class="col">
+                    <a href="#" class="text-white text-center">Consentimiento informado</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    </script>
+    <script src="https://use.fontawesome.com/90087fb33a.js"></script>
 </body>
+
 </html>

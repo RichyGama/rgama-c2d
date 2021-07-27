@@ -1,0 +1,73 @@
+<section class="c2d-cupones-busqueda">
+    <div class="container bg-pure-white p-4">
+        <div class="row">
+            <div class="col-12 col-md-4 d-flex justify-content-center">
+                <form (ngSubmit)="buscarZonaoCategoria(zonaCategoria)" #zonaCategoria="ngForm">
+                    <h5>Busca por zona o categoría</h5>
+                    <div class="row">
+                        <div class="col-12 col-md-6 d-flex justify-content-center">
+                            <div class="form-group me-2">
+                                <select id="inputMarca" class="form-control" ngModel name="marca">
+                                    <option selected>Marca</option>
+                                    <option>...</option>
+                                </select>
+                            </div>
+                            <div class="form-group me-2">
+                                <select id="inputCategoria" class="form-control" ngModel name="categoria">
+                                    <option selected>Categoria</option>
+                                    <option>...</option>
+                                </select>
+                            </div>
+                            <div class="form-group me-2">
+                                <select id="inputEstado" class="form-control" ngModel name="estado">
+                                    <option selected>Estado</option>
+                                    <option>...</option>
+                                </select>
+                            </div>
+                            <div class="form-group me-2">
+                                <select id="inputCiudad" class="form-control" ngModel name="ciudad">
+                                    <option selected>Ciudad</option>
+                                    <option>...</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <button type="submit" class="btn btn-outline-danger">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-12 col-md-3 d-flex justify-content-start">
+                <form (ngSubmit)="descuento()">
+                    <h5>Descuentos cercanos</h5>
+                    <div class="row">
+                        <div class="col  borde-buscar">
+                            <button type="submit" class="btn btn-secondary float-end">Buscar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-12 col-md-3">
+                <form>
+                    <h5>Descuentos por marca </h5>
+                    <div class="row">
+                        <div class="col d-flex justify-content-start">
+                            
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" aria-describedby="button-addon2" id="buscarmarca">
+                                <button class="btn btn-outline-danger" type="button" id="button-buscarmarca"><i class="fas fa-search fa-2x"></i></button>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
